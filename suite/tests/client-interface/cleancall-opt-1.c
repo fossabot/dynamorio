@@ -41,6 +41,8 @@
 /* List of instrumented functions. */
 #define FUNCTIONS() \
         FUNCTION(modify_gprs) \
+        FUNCTION(inscount) \
+        FUNCTION(compiler_inscount) \
         LAST_FUNCTION()
 
 /* Definitions for every function. */
