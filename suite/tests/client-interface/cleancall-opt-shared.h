@@ -695,11 +695,11 @@ codegen_inscount(void *dc)
 {
     instrlist_t *ilist = instrlist_create(dc);
     opnd_t scratch1 = opnd_create_reg(IF_X86_ELSE(DR_REG_XAX, DR_REG_X4));
-    opnd_t scratch2;
+    IF_AARCH64(opnd_t scratch2);
     codegen_prologue(dc, ilist);
 #ifdef X86
-    APP(ilist, INSTR_CREATE_mov_ld(dc, scratch, codegen_opnd_arg1()));
-    APP(ilist, INSTR_CREATE_add(dc, OPND_CREATE_ABSMEM(&global_count, OPSZ_PTR), scratch));
+    APP(ilist, INSTR_CREATE_mov_ld(dc, scratch1, codegen_opnd_arg1()));
+    APP(ilist, INSTR_CREATE_add(dc, OPND_CREATE_ABSMEM(&global_count, OPSZ_PTR), scratch1));
 #elif defined(AARCH64)
     scratch2 = opnd_create_reg(DR_REG_X5);
     instrlist_insert_mov_immed_ptrsz(dc, (long) &global_count, scratch1, ilist, NULL,
