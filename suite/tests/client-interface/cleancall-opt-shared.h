@@ -642,9 +642,17 @@ codegen_opnd_arg1(void)
     return opnd_create_reg(reg);
 #else /* X86 */
 # ifdef UNIX
+#ifdef TEST_INLINE
     int arg_offset = 1;
+#else /* clean call not inlined, call pushes ebp and the return address */
+    int arg_offset = 3;
+#endif
 # else /* WINDOWS */
+#ifdef TEST_INLINE
     int arg_offset = 5;
+#else /* clean call not inlined, call pushes ebp and the return address */
+    int arg_offset = 7;
+#endif
 # endif
     return OPND_CREATE_MEMPTR(DR_REG_XBP, arg_offset * sizeof(reg_t));
 #endif
