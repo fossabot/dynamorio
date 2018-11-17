@@ -1,6 +1,7 @@
 # DynamoRIO
 
 ![DynamoRIO logo](http://www.burningcutlery.com/images/dynamorio/drlogo.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwkirschenmann%2Fdynamorio.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwkirschenmann%2Fdynamorio?ref=badge_shield)
 
 ## About DynamoRIO
 
@@ -58,3 +59,7 @@ To report a bug, use the [issue
 tracker](https://github.com/DynamoRIO/dynamorio/issues).
 
 See also [the DynamoRIO home page](http://dynamorio.org/): [http://dynamorio.org/](http://dynamorio.org/)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwkirschenmann%2Fdynamorio.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwkirschenmann%2Fdynamorio?ref=badge_large)
